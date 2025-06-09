@@ -1,17 +1,42 @@
+import java.util.Scanner;
+
 public class PruebaInterfaz {
     public static void main(String[] args) {
-        IFigura[] figuras = new IFigura[3];
+        Scanner scanner = new Scanner(System.in);
+        IFigura figura = null;
 
-        figuras[0] = new Punto(1, 2);
-        figuras[1] = new Circulo(3, 4, 5);
-        figuras[2] = new Cilindro(5, 6, 2, 10);
+        System.out.println("Seleccione una figura:");
+        System.out.println("1. Punto");
+        System.out.println("2. Círculo");
+        System.out.println("3. Cilindro");
+        System.out.print("Opción: ");
+        int opcion = scanner.nextInt();
 
-        for (IFigura figura : figuras) {
-            System.out.println("Nombre: " + figura.obtenerNombre());
-            System.out.println("Área: " + figura.obtenerArea());
-            System.out.println("Volumen: " + figura.obtenerVolumen());
-            System.out.println("Descripción: " + figura.toString());
-            System.out.println("----------------------------------------");
-        }
-    }
-}
+        switch (opcion) {
+            case 1:
+                System.out.print("Ingrese coordenada X: ");
+                int x1 = scanner.nextInt();
+                System.out.print("Ingrese coordenada Y: ");
+                int y1 = scanner.nextInt();
+                figura = new Punto(x1, y1);
+                break;
+
+            case 2:
+                System.out.print("Ingrese coordenada X: ");
+                int x2 = scanner.nextInt();
+                System.out.print("Ingrese coordenada Y: ");
+                int y2 = scanner.nextInt();
+                System.out.print("Ingrese el radio: ");
+                double radio = scanner.nextDouble();
+                figura = new Circulo(x2, y2, radio);
+                break;
+
+            case 3:
+                System.out.print("Ingrese coordenada X: ");
+                int x3 = scanner.nextInt();
+                System.out.print("Ingrese coordenada Y: ");
+                int y3 = scanner.nextInt();
+                System.out.print("Ingrese el radio: ");
+                double r = scanner.nextDouble();
+                System.out.print("Ingrese la altura: ");
+                doub
