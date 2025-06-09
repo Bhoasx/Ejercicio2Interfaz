@@ -39,4 +39,18 @@ public class PruebaInterfaz {
                 System.out.print("Ingrese el radio: ");
                 double r = scanner.nextDouble();
                 System.out.print("Ingrese la altura: ");
-                doub
+                double altura = scanner.nextDouble();
+                figura = new Cilindro(x3, y3, r, altura);
+                break;
+
+            default:
+                System.out.println("Opción no válida.");
+                System.exit(0);
+        }
+
+        System.out.println("\nFigura: " + figura.obtenerNombre());
+        System.out.printf("Coordenadas o propiedades: %s\n", figura.toString());
+        System.out.printf("Área: %.2f\n", figura.obtenerArea());
+        System.out.printf("Volumen: %.2f\n", figura.obtenerVolumen());
+    }
+}
